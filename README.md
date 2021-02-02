@@ -58,35 +58,41 @@ Creates a Direct Message channel with the User that triggered the Simple or Exte
 **Available in**: Discord
 
 ### (Function) Create Embed
+Creates an Embed from an existing Embed Template. The Embed can be edited with Element IDs inside this Function.  
 **Required Parameters**: EmbedTemplate ``TemplateName``  
 **Returns?** Yes  
 **Return Type**: Int ``ErrorCode``  
 **Available in**: Discord
 
 ### (Function) React
-**Required Parameters**: Int ``Unicode`` (Emoticons are automatically converted into its Unicode equivalent)  
+Adds a reaction to a Message.  
+**Required Parameters**: Message ``Message``, Int ``Unicode`` (Emoticons are automatically converted into its Unicode equivalent)  
 **Returns?** Yes  
 **Return Type**: Int ``ErrorCode``  
 **Available in**: Discord
 
 ### (Function) Play Sound
+Plays a sound file (supported types are dependent on Discord.js) from the local machine. May optionally add a starting time. If the feed pauses, this Function will return the current time.  
 **Required Parameters**: String ``Path``, String ``Channel``  
 **Return Type**: Int ``CurrentTime``  
 **Available in**: Discord
 
 ### (Dedicated) YouTube Playback
+Plays the topmost result of a YouTube search using the keyword passed. Using this Control reserves the "ytplay" "ytskip", "ytpause", and "ytplayskip" commands automatically unless the Global Variables ``YouTube Play``, ``YouTube Skip``, ``YouTube Pause``, and ``YouTube Play Skip Command`` are modified.  
 **Required Parameters**: String ``Query``, String ``Channel``  
 **Returns?** Yes  
 **Return Type**: Int ``ErrorCode``  
 **Available in**: Discord
 
 ### (Dedicated) Firebase Realtime Database Update
-**Required Parameters**: String ``Path``, JSON ``Data``  
+Alters the data in the given Firebase Realtime Database path (reference) with the given key-value pair. Automatically retrieves existing data if present.
+**Required Parameters**: String ``Path``, Key ``Data``, Value ``Data`` 
 **Returns?** Yes  
 **Return Type**: Int ``ErrorCode``  
 **Available in**: Discord
 
 ### (Dedicated) Local Database Update
+Alters the data in a local SQLite Database with the given data. The extension parameter determines the file format (.txt/etc.)
 **Required Parameters**: String ``Path``, Data (may be any data type that can be written to a file), String ``Extension``  
 **Returns?** Yes  
 **Return Type**: Int ``ErrorCode``  
